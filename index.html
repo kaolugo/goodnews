@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <title>The Good News</title>
+    </head>
+
+    <body>
+
+        <div class="grid-container">
+            <div class="heading">
+                <hr class="bar1">
+                <h1>The Good News</h1>
+            </div>
+
+            
+            <div class="nav">
+                <hr class="bars">
+                <!--<a href = "moments.html" class = "nav">Moments</a>
+                <a href = "social.html" class  = "nav">Social</a>-->
+                <a href = "index.html" class = "nav">News</a>
+                <a href = "about.html" class = "nav">About Us</a>
+                <hr class="bars">
+            </div>
+            <div class="article" id="afeed">
+                <script>
+                    $.getJSON('https://kaolugo.github.io/goodnews/result.json', function(data) {
+                        console.log(data);
+
+                        for(var i = 0; i < data.length; i++) {
+                            var obj = data[i];
+                            var element = document.getElementById("afeed");
+                            
+                            var jsonHeadline = obj.title;
+                            var headline = document.createElement("h2");
+                            var headlineNode = document.createTextNode(jsonHeadline);
+                            headline.appendChild(headlineNode);
+                            element.appendChild(headline);
+
+                            
+                            
+                            var image = document.createElement("img");
+                            image.src = obj.image_url;
+                            image.style.width = "600px";
+                            image.style.height = "350px";
+                            element.appendChild(image);
+
+                            var jsonDate = obj.date_publish;
+                            if (jsonDate != null){
+                                var date = document.createElement("h3");
+                                var dateIntro = document.createTextNode("Published on ")
+                                var dateNode = document.createTextNode(jsonDate);
+                                date.appendChild(dateIntro);
+                                date.appendChild(dateNode);
+                                element.appendChild(date);
+                            }
+                            
+                            var jsonPreview = obj.description;
+                            var preview = document.createElement("p");
+                            var previewNode = document.createTextNode(jsonPreview);
+                            preview.appendChild(previewNode);
+                            element.appendChild(preview);
+                            
+                            var jsonUrl = obj.url;
+                            var url = document.createElement("a");
+                            var urlNode = document.createTextNode("Read the rest of the story here !!");
+                            url.appendChild(urlNode);
+                            url.title = "Read the rest of the story here.";
+                            url.href = jsonUrl;
+                            url.className = "readmore";
+                            element.appendChild(url);
+
+                            var bar = document.createElement("hr");
+                            element.appendChild(bar);
+
+                            console.log(date);
+                        }
+                    });
+                </script>
+            </div>
+            <div class="feed" id="bfeed">
+                <h4>Recent News</h4>
+                <script>
+                    $.getJSON('https://kaolugo.github.io/goodnews/result.json', function(data) {
+                        console.log(data);
+
+                        for(var i = 0; i < data.length; i++) {
+                            var obj = data[i];
+                            var element = document.getElementById("bfeed");
+                            
+                            var jsonHeadline = obj.title;
+                            var jsonUrl = obj.url;
+
+
+                            var url = document.createElement("a");
+                            var headlineNode = document.createTextNode(jsonHeadline);
+                            url.appendChild(headlineNode);
+                            url.title = "Read the rest of the story here.";
+                            url.href = jsonUrl;
+                            url.className = "feedlink";
+                            element.appendChild(url);
+
+                            var lineBreak = document.createElement("br");
+                            element.appendChild(lineBreak);
+                            var lineBreak2 = document.createElement("br");
+                            element.appendChild(lineBreak2);
+                        }
+                    });
+                </script>
+            </div>
+            <div class="footer">
+                <div class="bottomText">Your daily source of "The Good News"</div>
+                <div class="bottomText2">Content updated every 24h, with love </div> 
+            </div>
+          </div>
+
+
+        
+    </body>
+</html>
