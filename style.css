@@ -1,0 +1,143 @@
+
+h1 {
+    font-family: "Times New Roman", Times, Serif;
+    font-weight: 100;
+    font-size: 4vw;
+    line-height: 30%;
+}
+
+h2 {
+    font-family: "Times New Roman", Times, Serif;
+    font-weight: 100;
+    font-size: 2vw;
+}
+
+h3 {
+    font-family: "Times New Roman", Times, Serif;
+    font-weight: 100;
+    font-size: 0.8vw;
+    text-align: right;
+
+}
+
+h4 {
+    font-family: "Times New Roman", Times, Serif;
+    font-weight: 100;
+    font-size: 1.5vw;
+}
+
+p {
+    font-family: "Open Sans";
+    font-size: 1.1vw;
+}
+
+a.readmore:link {
+    font-family: "Open Sans";
+    font-size: 0.8vw;
+    font-weight: 100;
+    color: #27A03D;
+}
+
+a.readmore:visited {
+    color: #27A03D;
+}
+
+
+
+hr.bar1 {
+    border-top: 10px solid #27A03D;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 0.2fr 0.2fr 40vw 0.2fr;
+    gap: 1px 1px;
+    grid-template-areas: "heading heading" "nav nav" "article feed" "footer footer";
+  }
+  
+.heading { 
+    grid-area: heading; 
+    text-align: center;
+}
+  
+.nav { 
+    grid-area: nav; 
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+a.nav:link {
+    font-family: "Open Sans";
+    font-weight: 100;
+    font-size: 1.5vw;
+    color: #000000;
+
+}
+
+a.nav:visited{
+    color: #000;
+}
+
+a.nav:hover{
+    color: #0B5318;
+    background-color: #F8E6CB;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+
+.bars {
+    border-top: 3px solid #27A03D;
+}
+
+.article { 
+    grid-area: article; 
+    padding-left: 19vw;
+    padding-right: 3vw;
+    overflow-y: auto;
+}
+
+
+
+.feed { 
+    grid-area: feed; 
+    border-left: 1px solid black;
+    padding-right: 19vw;
+    padding-left: 3vw;
+}
+
+a.feedlink:link {
+    font-family: "Open Sans";
+    color: #0B5318;
+}
+
+a.feedlink:visited{
+    color: #0B5318;
+}
+
+a.feedlink:hover {
+    background-color: #F8E6CB;
+}
+
+.footer { 
+    grid-area: footer; 
+    text-align: center;
+    padding-top: 0.7vw;
+    border-top: 6px solid #27A03D;
+}
+
+.bottomText {
+    font-family: "Open Sans";
+    font-size: 1.3vw;
+}
+
+.bottomText2 {
+    font-family: "Times New Roman";
+    font-size: 1vw;
+    padding-top: 0.5vw;
+}
