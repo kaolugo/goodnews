@@ -109,6 +109,7 @@ a:link {
     border-left: 1px solid black;
     padding-right: 19vw;
     padding-left: 3vw;
+    overflow-y: scroll;
 }
 
 a.feedlink:link {
